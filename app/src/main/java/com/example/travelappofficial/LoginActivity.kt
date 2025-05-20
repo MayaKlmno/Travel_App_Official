@@ -33,6 +33,8 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // I added the val Saved Instance State because it was the suggestion given from android studio
+        val SavedInstanceState = null
         super.onCreate(SavedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
