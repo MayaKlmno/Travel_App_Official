@@ -53,9 +53,13 @@ class LoginActivity : AppCompatActivity() {
                     }
 
                     override fun handleFault(fault: BackendlessFault?) {
-                        Toast.makeText(this@LoginActivity,
+                        if (fault != null) {
+                            Toast.makeText(this@LoginActivity,
                                 "${fault.message}", Toast.LENGTH_LONG).show()
-                        Log.d("LoginActivity", "handleFault: ${fault.message}")
+                        }
+                        if (fault != null) {
+                            Log.d("LoginActivity", "handleFault: ${fault.message}")
+                        }
                     }
                 }
             )
