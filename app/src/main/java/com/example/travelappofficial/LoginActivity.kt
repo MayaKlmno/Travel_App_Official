@@ -33,6 +33,8 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // I added the val Saved Instance State because it was the suggestion given from android studio
+        val SavedInstanceState = null
         super.onCreate(SavedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -53,9 +55,13 @@ class LoginActivity : AppCompatActivity() {
                     }
 
                     override fun handleFault(fault: BackendlessFault?) {
-                        Toast.makeText(this@LoginActivity,
+                        if (fault != null) {
+                            Toast.makeText(this@LoginActivity,
                                 "${fault.message}", Toast.LENGTH_LONG).show()
-                        Log.d("LoginActivity", "handleFault: ${fault.message}")
+                        }
+                        if (fault != null) {
+                            Log.d("LoginActivity", "handleFault: ${fault.message}")
+                        }
                     }
                 }
             )
