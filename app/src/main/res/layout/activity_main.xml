@@ -64,6 +64,7 @@
         android:id="@+id/textView"
         android:layout_width="234dp"
         android:layout_height="157dp"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="136dp"
         android:fontFamily="@font/alice"
         android:text=" * Explore new destinations! \n\n\n * Read and write reviews! \n\n\n * Plan your perfect vacation!"
@@ -71,5 +72,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
