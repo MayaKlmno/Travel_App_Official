@@ -11,35 +11,51 @@
         android:id="@+id/textView_locationItem_emoji"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
         android:text="emoji"
         android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView_locationItem_price"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView_locationItem_locationName"
+        app:layout_constraintStart_toStartOf="@+id/textView_locationItem_price"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView_locationItem_locationName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="5dp"
         android:fontFamily="@font/alice"
         android:text="Mount Fuji"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/ratingBar_locationItem_starRating"
         app:layout_constraintEnd_toEndOf="@+id/ratingBar_locationItem_starRating"
+        app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="@+id/ratingBar_locationItem_starRating"
         app:layout_constraintTop_toTopOf="parent" />
 
     <RatingBar
         android:id="@+id/ratingBar_locationItem_starRating"
-        android:layout_width="238dp"
-        android:layout_height="49dp"
+        android:layout_width="236dp"
+        android:layout_height="0dp"
         android:scaleX="0.5"
         android:scaleY="0.5"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.148"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_locationItem_locationName"
         tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/textView_locationItem_price"
+        android:layout_width="150dp"
+        android:layout_height="20dp"
+        android:fontFamily="@font/alice"
+        android:text="Money spent: $400"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ratingBar_locationItem_starRating" />
 </androidx.constraintlayout.widget.ConstraintLayout>
