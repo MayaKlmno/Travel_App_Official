@@ -49,7 +49,7 @@ class LoginActivity : AppCompatActivity() {
                 username,
                 password,
                 object : AsyncCallback<BackendlessUser?> {
-                    override fun handleResponse(response: BackendlessUser?) {
+                    override fun handleResponse(user: BackendlessUser?) {
                         Toast.makeText(this@LoginActivity,
                             "${user?.userId} has logged in", Toast.LENGTH_LONG). show()
                     }
@@ -67,18 +67,18 @@ class LoginActivity : AppCompatActivity() {
             )
         }
         // laungh the Registration Activity
-        binding.textViewLoginSignup.setOnClickListener {
-            // this creates an intent object with the current activity and the destination activity's class
-            val registrationIntent = Intent(this,
-                RegistrationActivity::class.java)
-            // optionally add information to send with the intent, key-value pairs just like with Bundles
-            registrationIntent.putExtra(EXTRA_USERNAME,
-                binding.editTextLoginUsername.text.toString())
-            registrationIntent.putExtra(EXTRA_PASSWORD,
-                binding.editTextLoginPassword.text.toString())
-            // launch the activity for a result using the variable from the register for result contract above
-            startRegistrationForResult.launch(registrationIntent)
-        }
+//        binding.textViewLoginSignup.setOnClickListener {
+//            // this creates an intent object with the current activity and the destination activity's class
+//            val registrationIntent = Intent(this,
+//                RegistrationActivity::class.java)
+//            // optionally add information to send with the intent, key-value pairs just like with Bundles
+//            registrationIntent.putExtra(EXTRA_USERNAME,
+//                binding.editTextLoginUsername.text.toString())
+//            registrationIntent.putExtra(EXTRA_PASSWORD,
+//                binding.editTextLoginPassword.text.toString())
+//            // launch the activity for a result using the variable from the register for result contract above
+//            startRegistrationForResult.launch(registrationIntent)
+//        }
     }
 
 }
