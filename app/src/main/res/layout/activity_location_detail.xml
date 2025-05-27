@@ -11,9 +11,11 @@
         android:layout_height="468dp"
         android:layout_marginBottom="14dp"
         app:layout_constraintBottom_toTopOf="@+id/textView_locationDetail_locationName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/explorer"
-        tools:layout_editor_absoluteX="16dp" />
+        app:srcCompat="@drawable/explorer" />
 
     <TextView
         android:id="@+id/textView_locationDetail_locationName"
@@ -33,12 +35,12 @@
         android:layout_marginStart="1dp"
         android:layout_marginBottom="23dp"
         android:text="Honshu, Japan"
-        app:layout_constraintBottom_toTopOf="@+id/ratingBar"
+        app:layout_constraintBottom_toTopOf="@+id/ratingBar_locationDetail"
         app:layout_constraintStart_toStartOf="@+id/textView_locationDetail_locationName"
         app:layout_constraintTop_toBottomOf="@+id/textView_locationDetail_locationName" />
 
     <RatingBar
-        android:id="@+id/ratingBar"
+        android:id="@+id/ratingBar_locationDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
@@ -62,10 +64,10 @@
         android:id="@+id/textView_locationDetail_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
+        android:layout_marginStart="8dp"
         android:layout_marginBottom="32dp"
         android:text="description"
         app:layout_constraintBottom_toTopOf="@+id/textView_locationDetail_cost"
-        app:layout_constraintStart_toStartOf="@+id/ratingBar"
-        app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+        app:layout_constraintStart_toStartOf="@+id/ratingBar_locationDetail"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar_locationDetail" />
 </androidx.constraintlayout.widget.ConstraintLayout>
