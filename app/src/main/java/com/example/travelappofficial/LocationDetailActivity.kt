@@ -35,7 +35,7 @@ class LocationDetailActivity : AppCompatActivity() {
         val locationEntry = intent.getParcelableExtra<LocationEntry>(EXTRA_LOCATION_ENTRY) ?: LocationEntry()
 
         binding.textViewLocationDetailLocationName.setText(locationEntry.name)
-        binding.textViewLocationDetailCityCountry.setText(locationEntry.location)
+        binding.textViewLocationDetailCityCountry.setText(locationEntry.city + ", " + locationEntry.country)
         binding.textViewLocationDetailCost.setText("${locationEntry.moneySpent / 100}.${locationEntry.moneySpent % 100}")
         binding.ratingBarLocationDetail.setNumStars(locationEntry.rating)
         binding.textViewLocationDetailDescription.setText(locationEntry.description)

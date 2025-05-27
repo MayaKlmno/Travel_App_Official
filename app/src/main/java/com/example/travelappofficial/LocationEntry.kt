@@ -9,7 +9,8 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class LocationEntry(
     var name: String = "Random Location",
-    var location: String = "City, Country",
+    var city: String = "City",
+    var country: String = "Country",
     var rating: Int = 0,
     var moneySpent: Int = 0, // stored in cents (saves the decimal imprecision nonsense)
     var emotion: String = EMOJI.MOUNTAIN.name,

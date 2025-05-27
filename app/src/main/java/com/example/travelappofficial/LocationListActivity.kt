@@ -29,7 +29,7 @@ class LocationListActivity : AppCompatActivity() {
             insets
         }
     binding.fabLocationListNewEntry.setOnClickListener{
-        val intent = Intent(this, LocationDetailActivity::class.java)
+        val intent = Intent(this, LocationNewActivity::class.java)
         startActivity(intent)
     }
     // make backendless call to retrieve all data
@@ -42,9 +42,7 @@ class LocationListActivity : AppCompatActivity() {
     Backendless.Data.of(LocationEntry::class.java)
         .find(queryBuilder, object : AsyncCallback<List<LocationEntry>> {
             override fun handleResponse(foundLocationEntry: List<LocationEntry>) {
-                // all GameEntry instances have been found
-                Log.d("GameListActivity", "handleResponse: $foundLocationEntry")
-//                    val gameList = foundGameEntries
+                Log.d("LocationListActivity", "handleResponse: $foundLocationEntry")
                 adapter = LocationAdapter(foundLocationEntry.toMutableList())
                 binding.recyclerViewLocationListLocations.adapter = adapter
                 binding.recyclerViewLocationListLocations.layoutManager =
@@ -53,7 +51,7 @@ class LocationListActivity : AppCompatActivity() {
 
             override fun handleFault(fault: BackendlessFault) {
                 // an error has occurred, the error code can be retrieved with fault.getCode()
-                Log.d("GameListActivity", "handleFault: ${fault.message}")
+                Log.d("LocationListActivity", "handleFault: ${fault.message}")
             }
         })
     }

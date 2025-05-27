@@ -48,14 +48,14 @@ class LocationAdapter (var locationList: MutableList<LocationEntry>) : RecyclerV
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val game = locationList[position]
+        val location = locationList[position]
         val context = holder.layout.context
-        holder.textViewName.text = game.name
+        holder.textViewName.text = location.name
         // TODO: format the money nicely to show it like $5.99
-        holder.textViewMoneySpent.text = game.moneySpent.toString()
+        holder.textViewMoneySpent.text = location.moneySpent.toString()
         // TODO: verify this works in displaying the emoji
         holder.textViewEmotion.text = try {
-            LocationEntry.EMOJI.valueOf(game.emotion).emoji
+            LocationEntry.EMOJI.valueOf(location.emotion).emoji
         } catch (ex: IllegalArgumentException) {
             "¯\\_(ツ)_/¯"
         }
@@ -66,7 +66,7 @@ class LocationAdapter (var locationList: MutableList<LocationEntry>) : RecyclerV
             popMenu.inflate(R.menu.menu_location_list_context)
             popMenu.setOnMenuItemClickListener {
                 when (it.itemId) {
-                    R.id.menu_game_delete -> {
+                    R.id.menu_location_delete -> {
                         deleteFromBackendless(position)
                         true
                     }
@@ -86,7 +86,7 @@ class LocationAdapter (var locationList: MutableList<LocationEntry>) : RecyclerV
         }
     }
     private fun deleteFromBackendless(position: Int) {
-        Log.d("GameAdapter", "deleteFromBackendless: Trying to delete ${locationList[position]}")
+        Log.d("LocationAdapter", "deleteFromBackendless: Trying to delete ${locationList[position]}")
         Backendless.Data.of(LocationEntry::class.java).save(locationList[position], object : AsyncCallback<LocationEntry> {
             override fun handleResponse(savedLocationEntry: LocationEntry) {
                 Backendless.Data.of(LocationEntry::class.java).remove(savedLocationEntry, object : AsyncCallback<Long> {
@@ -108,8 +108,5 @@ class LocationAdapter (var locationList: MutableList<LocationEntry>) : RecyclerV
                 // an error has occurred, the error code can be retrieved with fault.code
             }
         })
-        // put in the code to delete the item using the callback from Backendless
-        // in the handleResponse, we'll need to also delete the item from the gameList (will need to update it to make it mutable)
-        // and make sure that the recyclerview is updated using notifyDatasetChanged
     }
 }
