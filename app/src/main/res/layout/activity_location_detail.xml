@@ -2,17 +2,19 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_locationDetail"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
 
     <ImageView
         android:id="@+id/imageView_locationDetail_image"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="389dp"
+        android:layout_height="394dp"
         android:layout_marginStart="13dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="13dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toTopOf="@+id/textView_locationDetail_locationName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,6 +28,7 @@
         android:layout_marginStart="36dp"
         android:fontFamily="@font/alice"
         android:text="Mount Fuji"
+        android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/textView_locationDetail_cityCountry"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView_locationDetail_image" />
@@ -34,9 +37,10 @@
         android:id="@+id/textView_locationDetail_cityCountry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/alice"
         android:text="Honshu, Japan"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/ratingBar_locationDetail"
         app:layout_constraintStart_toStartOf="@+id/textView_locationDetail_locationName"
         app:layout_constraintTop_toBottomOf="@+id/textView_locationDetail_locationName" />
@@ -45,12 +49,14 @@
         android:id="@+id/ratingBar_locationDetail"
         android:layout_width="233dp"
         android:layout_height="52dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="13dp"
+        android:layout_marginBottom="8dp"
+        android:background="#00FFFFFF"
         android:scaleX=".5"
         android:scaleY=".5"
         app:layout_constraintBottom_toTopOf="@+id/textView_locationDetail_description"
-        app:layout_constraintStart_toStartOf="@+id/textView_locationDetail_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_locationDetail_cityCountry" />
 
     <TextView
@@ -61,21 +67,22 @@
         android:layout_marginBottom="61dp"
         android:fontFamily="@font/alice"
         android:text="$400 per day"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_locationDetail_description" />
 
     <TextView
         android:id="@+id/textView_locationDetail_description"
-        android:layout_width="339dp"
-        android:layout_height="208dp"
+        android:layout_width="336dp"
+        android:layout_height="167dp"
         android:layout_marginStart="35dp"
         android:layout_marginEnd="35dp"
-        android:layout_marginBottom="32dp"
         android:fontFamily="@font/alice"
         android:text="Mount Fuji is a popular vacation destination in Japan, renowned for its iconic symmetrical shape, sacred history, and diverse activities. It's Japan's tallest mountain, a dormant volcano, and a UNESCO World Heritage site, attracting millions of international tourists each year. Visitors can choose from climbing the mountain (during the designated season), enjoying the Fuji Five Lakes, exploring Hakone National Park, or simply admiring its beauty."
         app:layout_constraintBottom_toTopOf="@+id/textView_locationDetail_cost"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ratingBar_locationDetail" />
 </androidx.constraintlayout.widget.ConstraintLayout>
