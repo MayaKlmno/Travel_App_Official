@@ -1,6 +1,5 @@
 package com.example.travelappofficial
 
-import android.R
 import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
@@ -41,16 +40,30 @@ class LocationDetailActivity : AppCompatActivity() {
         binding.ratingBarLocationDetail.setNumStars(locationEntry.rating)
         binding.textViewLocationDetailDescription.setText(locationEntry.description)
 
-//FOR THIS PART MAKE EMOJI INTO BACKGROUND PIC
-        if (locationEntry.emotion.equals(LocationEntry.EMOJI.MOUNTAIN.name)){
-
+        if (locationEntry.emotion == LocationEntry.EMOJI.MOUNTAIN.name){
+            image.setImageDrawable(getDrawable(R.drawable.mountain_image))
         }
-//        var spinnerItems = LocationEntry.EMOJI.entries.map { it.emoji }
-//        binding.spinnerGameDetailEmotion.adapter = ArrayAdapter(this, R.layout.simple_spinner_dropdown_item, spinnerItems)
-//        var position = spinnerItems.indexOf(locationEntry.emotion)
-//        if(position < 0) {
-//            position = 0
-//        }
-//        binding.spinnerGameDetailEmotion.setSelection(position)
+        else if(locationEntry.emotion==(LocationEntry.EMOJI.TROPICAL.name)){
+            image.setImageDrawable(getDrawable(R.drawable.tropical_image))
+        }
+        else if(locationEntry.emotion==(LocationEntry.EMOJI.CITY.name)){
+            image.setImageDrawable(getDrawable(R.drawable.city_image))
+        }
+        else if(locationEntry.emotion==(LocationEntry.EMOJI.MYSTICAL.name)){
+            image.setImageDrawable(getDrawable(R.drawable.mystical_image))
+        }
+        else if(locationEntry.emotion==(LocationEntry.EMOJI.CASTLE.name)){
+            image.setImageDrawable(getDrawable(R.drawable.castle_image))
+        }
+        else if(locationEntry.emotion==(LocationEntry.EMOJI.CAMPING.name)){
+            image.setImageDrawable(getDrawable(R.drawable.camping_image))
+        }
+        else if(locationEntry.emotion==(LocationEntry.EMOJI.DESERT.name)){
+            image.setImageDrawable(getDrawable(R.drawable.desert_image))
+        }
+        else{
+            image.setImageDrawable(getDrawable(R.drawable.mountain_image))
+        }
+
     }
 }
