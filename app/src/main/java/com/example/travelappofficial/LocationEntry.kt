@@ -9,9 +9,11 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class LocationEntry(
     var name: String = "Random Location",
-    var rating: Double = 0.0,
+    var location: String = "City, Country",
+    var rating: Int = 0,
     var moneySpent: Int = 0, // stored in cents (saves the decimal imprecision nonsense)
     var emotion: String = EMOJI.MOUNTAIN.name,
+    var description: String = "Random Desc",
     var ownerId: String? = null,
     var objectId: String? = null // null so that new objects receive an id from the server
 ): Parcelable {

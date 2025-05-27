@@ -29,8 +29,8 @@ class LocationListActivity : AppCompatActivity() {
             insets
         }
     binding.fabLocationListNewEntry.setOnClickListener{
-//        val intent = Intent(this, GameDetailActivity::class.java)
-//        startActivity(intent)
+        val intent = Intent(this, LocationDetailActivity::class.java)
+        startActivity(intent)
     }
     // make backendless call to retrieve all data
 
