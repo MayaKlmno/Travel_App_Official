@@ -83,7 +83,7 @@ class LocationNewActivity : AppCompatActivity() {
         // code here to save to backendless
         Backendless.Data.of(LocationEntry::class.java).save(locationEntry, object : AsyncCallback<LocationEntry?> {
             override fun handleResponse(response: LocationEntry?) {
-                Toast.makeText(this@LocationNewActivity, "${locationEntry} has been successfully updated", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@LocationNewActivity, "${locationEntry} has been successfully created", Toast.LENGTH_SHORT).show()
             }
 
             override fun handleFault(fault: BackendlessFault) {
