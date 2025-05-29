@@ -44,11 +44,11 @@ class RegistrationActivity : AppCompatActivity(){
                 Backendless.UserService.register(user, object : AsyncCallback<BackendlessUser?> {
                     override fun handleResponse(registeredUser: BackendlessUser?) {
                         // user has been registered and now can login
-                        Toast.makeText(this@RegistrationActivity, "user has been successfully created", Toast.LENGTH_SHORT).show()
                         val intent = Intent()
                         intent.putExtra(LoginActivity.EXTRA_USERNAME, username)
                         intent.putExtra(LoginActivity.EXTRA_PASSWORD,password)
                         setResult(RESULT_OK, intent)
+                        Toast.makeText(this@RegistrationActivity, "user has been successfully created", Toast.LENGTH_SHORT).show()
                         finish()
                     }
 
