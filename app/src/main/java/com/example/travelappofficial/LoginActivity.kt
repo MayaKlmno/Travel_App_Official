@@ -52,6 +52,11 @@ class LoginActivity : AppCompatActivity() {
                     override fun handleResponse(user: BackendlessUser?) {
                         Toast.makeText(this@LoginActivity,
                             "${user?.userId} has logged in", Toast.LENGTH_LONG). show()
+                        val locationListIntent = Intent(this@LoginActivity, LocationListActivity::class.java)
+//                            might need to send the users userId across later
+                        locationListIntent.putExtra(EXTRA_USER_ID, user?.userId)
+                        startActivity(locationListIntent)
+                        finish()
                     }
 
                     override fun handleFault(fault: BackendlessFault?) {
