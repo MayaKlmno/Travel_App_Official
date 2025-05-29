@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/textView_locationItem_emoji"
-        android:layout_width="80dp"
-        android:layout_height="115dp"
+        android:layout_width="101dp"
+        android:layout_height="112dp"
         android:text="e"
         android:textSize="96sp"
         app:layout_constraintBottom_toTopOf="@+id/textView_locationItem_price"
@@ -35,13 +35,14 @@
 
     <RatingBar
         android:id="@+id/ratingBar_locationItem_starRating"
-        android:layout_width="184dp"
-        android:layout_height="61dp"
-        android:scaleX="0.5"
-        android:scaleY="0.5"
+        android:layout_width="238dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="172dp"
+        android:scaleX=".5"
+        android:scaleY=".5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.148"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_locationItem_locationName"
         tools:visibility="visible" />
@@ -57,6 +58,6 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/ratingBar_locationItem_starRating" />
 </androidx.constraintlayout.widget.ConstraintLayout>
