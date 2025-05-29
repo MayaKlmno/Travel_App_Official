@@ -52,13 +52,14 @@ class LocationAdapter (var locationList: MutableList<LocationEntry>) : RecyclerV
         val context = holder.layout.context
         holder.textViewName.text = location.name
         // TODO: format the money nicely to show it like $5.99
-        holder.textViewMoneySpent.text = location.moneySpent.toString()
+        holder.textViewMoneySpent.text = "Money Spent: $" + location.moneySpent.toString()
         // TODO: verify this works in displaying the emoji
         holder.textViewEmotion.text = try {
             LocationEntry.EMOJI.valueOf(location.emotion).emoji
         } catch (ex: IllegalArgumentException) {
             "¯\\_(ツ)_/¯"
         }
+        holder.ratingBar.rating = location.rating.toFloat()
         holder.layout.isLongClickable = true
         holder.layout.setOnLongClickListener {
             // the holder.textViewBorrower is the textView that the PopMenu will be anchored to
