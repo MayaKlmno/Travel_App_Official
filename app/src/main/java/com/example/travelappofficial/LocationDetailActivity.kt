@@ -19,7 +19,6 @@ class LocationDetailActivity : AppCompatActivity() {
     }
 
     private lateinit var binding: ActivityLocationDetailBinding
-    private lateinit var image: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,36 +33,38 @@ class LocationDetailActivity : AppCompatActivity() {
 
         val locationEntry = intent.getParcelableExtra<LocationEntry>(EXTRA_LOCATION_ENTRY) ?: LocationEntry()
 
+        if (locationEntry.emotion == LocationEntry.EMOJI.MOUNTAIN.name){
+            binding.imageViewLocationDetailImage.setImageDrawable(getDrawable(R.drawable.mountain_image))
+        }
+        else if(locationEntry.emotion==(LocationEntry.EMOJI.TROPICAL.name)){
+            binding.imageViewLocationDetailImage.setImageDrawable(getDrawable(R.drawable.tropical_image))
+        }
+        else if(locationEntry.emotion==(LocationEntry.EMOJI.CITY.name)){
+            binding.imageViewLocationDetailImage.setImageDrawable(getDrawable(R.drawable.city_image))
+        }
+        else if(locationEntry.emotion==(LocationEntry.EMOJI.MYSTICAL.name)){
+            binding.imageViewLocationDetailImage.setImageDrawable(getDrawable(R.drawable.mystical_image))
+        }
+        else if(locationEntry.emotion==(LocationEntry.EMOJI.CASTLE.name)){
+            binding.imageViewLocationDetailImage.setImageDrawable(getDrawable(R.drawable.castle_image))
+        }
+        else if(locationEntry.emotion==(LocationEntry.EMOJI.CAMPING.name)){
+            binding.imageViewLocationDetailImage.setImageDrawable(getDrawable(R.drawable.camping_image))
+        }
+        else if(locationEntry.emotion==(LocationEntry.EMOJI.DESERT.name)){
+            binding.imageViewLocationDetailImage.setImageDrawable(getDrawable(R.drawable.desert_image))
+        }
+        else{
+            binding.imageViewLocationDetailImage.setImageDrawable(getDrawable(R.drawable.mountain_image))
+        }
+
         binding.textViewLocationDetailLocationName.setText(locationEntry.name)
         binding.textViewLocationDetailCityCountry.setText(locationEntry.city + ", " + locationEntry.country)
         binding.textViewLocationDetailCost.setText("${locationEntry.moneySpent / 100}.${locationEntry.moneySpent % 100}")
         binding.ratingBarLocationDetail.setNumStars(locationEntry.rating)
         binding.textViewLocationDetailDescription.setText(locationEntry.description)
 
-        if (locationEntry.emotion == LocationEntry.EMOJI.MOUNTAIN.name){
-            image.setImageDrawable(getDrawable(R.drawable.mountain_image))
-        }
-        else if(locationEntry.emotion==(LocationEntry.EMOJI.TROPICAL.name)){
-            image.setImageDrawable(getDrawable(R.drawable.tropical_image))
-        }
-        else if(locationEntry.emotion==(LocationEntry.EMOJI.CITY.name)){
-            image.setImageDrawable(getDrawable(R.drawable.city_image))
-        }
-        else if(locationEntry.emotion==(LocationEntry.EMOJI.MYSTICAL.name)){
-            image.setImageDrawable(getDrawable(R.drawable.mystical_image))
-        }
-        else if(locationEntry.emotion==(LocationEntry.EMOJI.CASTLE.name)){
-            image.setImageDrawable(getDrawable(R.drawable.castle_image))
-        }
-        else if(locationEntry.emotion==(LocationEntry.EMOJI.CAMPING.name)){
-            image.setImageDrawable(getDrawable(R.drawable.camping_image))
-        }
-        else if(locationEntry.emotion==(LocationEntry.EMOJI.DESERT.name)){
-            image.setImageDrawable(getDrawable(R.drawable.desert_image))
-        }
-        else{
-            image.setImageDrawable(getDrawable(R.drawable.mountain_image))
-        }
+
 
     }
 }
