@@ -60,7 +60,7 @@ class LocationDetailActivity : AppCompatActivity() {
 
         binding.textViewLocationDetailLocationName.setText(locationEntry.name)
         binding.textViewLocationDetailCityCountry.setText(locationEntry.city + ", " + locationEntry.country)
-        binding.textViewLocationDetailCost.setText("${locationEntry.moneySpent / 100}.${locationEntry.moneySpent % 100}")
+        binding.textViewLocationDetailCost.setText("Money Spent: $"+"${locationEntry.moneySpent / 100}.${locationEntry.moneySpent % 100}")
         binding.ratingBarLocationDetail.setNumStars(locationEntry.rating)
         binding.textViewLocationDetailDescription.setText(locationEntry.description)
 
